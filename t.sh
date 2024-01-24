@@ -1,1 +1,1 @@
-echo "Hello main"
+echo "Hello $1"
