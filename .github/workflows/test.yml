@@ -2,6 +2,10 @@ name: test
 
 on:
   workflow_dispatch:
+    inputs:
+      script:
+        type: string
+        required: true
 
 jobs:
   test:
@@ -13,3 +17,5 @@ jobs:
       - run: echo ${{ github.ref_name }}
       - run: echo ${{ github.sha }}
       - run: git log
+      - run: ./${{ inputs.script }}
+        shell: bash
