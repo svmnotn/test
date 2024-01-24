@@ -12,4 +12,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.ref_name }}
+      - run: git branch --contains ${{ input.commit }}
