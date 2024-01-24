@@ -12,4 +12,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: git branch --contains ${{ input.commit }}
+      - run: git branch --contains ${{ inputs.commit }}
