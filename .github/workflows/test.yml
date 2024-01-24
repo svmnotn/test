@@ -2,14 +2,13 @@ name: test
 
 on:
   workflow_dispatch:
-    inputs:
-        commit:
-          description: 'commit'
-          required: true
-          type: string
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: git branch --contains ${{ inputs.commit }}
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - run: echo $GIT_COMMIT
+      - run: git branch --contains $GIT_COMMIT
