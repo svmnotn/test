@@ -11,4 +11,5 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - run: echo ${{ github.ref_name }}
+      - run: echo ${{ github.sha }}
       - run: git log
